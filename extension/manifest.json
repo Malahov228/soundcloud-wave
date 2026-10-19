@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Волна для SoundCloud",
+  "version": "0.2.4",
+  "description": "Волна на основе твоих лайков, предлагаемых плейлистов и реального времени прослушивания. Обучение хранится локально.",
+  "minimum_chrome_version": "111",
+  "permissions": ["storage"],
+  "host_permissions": ["https://soundcloud.com/*"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_title": "Открыть мою волну"},
+  "content_scripts": [
+    {"matches": ["https://soundcloud.com/*"], "js": ["media-bridge.js"], "run_at": "document_start", "world": "MAIN"},
+    {"matches": ["https://soundcloud.com/*"], "js": ["core.js", "adapter.js", "content.js"], "run_at": "document_idle"}
+  ]
+}

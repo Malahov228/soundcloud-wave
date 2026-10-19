@@ -1,0 +1,11 @@
+{
+  "name": "soundcloud-wave",
+  "version": "0.2.4",
+  "private": true,
+  "description": "Персональная волна для SoundCloud на основе лайков, предложенных плейлистов и прослушивания.",
+  "scripts": {
+    "test": "node --test tests/core.test.cjs tests/background.test.cjs tests/media.test.cjs tests/listening.test.cjs",
+    "test:browser": "node tests/browser/server.cjs"
+  },
+  "engines": {"node": ">=20"}
+}
